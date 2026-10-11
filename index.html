@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>油絵ノート｜油絵の勉強サイト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;800&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --crimson:#8b0000;
+  --crimson-deep:#5e0000;
+  --olive:#808000;
+  --cream:#f6edd6;
+  --ink:#2e1b15;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--crimson);color:var(--cream);font-family:var(--sans);font-size:16px;line-height:1.9}
+a{color:var(--cream)}
+a:focus-visible{outline:3px solid var(--cream);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{padding:20px 0;border-bottom:2px solid var(--olive)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.logo{font-family:var(--serif);font-weight:800;font-size:1.3rem;color:var(--cream);text-decoration:none}
+nav ul{list-style:none;display:flex;gap:22px;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:500;padding-bottom:2px;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current]{border-bottom-color:var(--cream)}
+
+/* hero */
+.hero{position:relative;padding:72px 0 88px;overflow:hidden}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(3rem,10vw,6.4rem);line-height:1.1;color:var(--cream);letter-spacing:.04em}
+.hero p{margin-top:20px;max-width:30em;font-size:1.1rem}
+.smear{position:absolute;right:-60px;top:30px;width:min(560px,70vw);height:auto;z-index:0}
+
+/* sections */
+section{padding:56px 0}
+h2{font-family:var(--serif);font-weight:800;font-size:1.7rem;color:var(--cream);margin-bottom:24px;display:inline-block;padding-bottom:6px;background:linear-gradient(var(--olive),var(--olive)) left bottom/100% 5px no-repeat}
+.more{display:inline-block;margin-top:20px;font-weight:500}
+
+/* topics */
+.topics{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.topics div{padding:14px 0;border-top:1px solid rgba(246,237,214,.5)}
+.topics dt{font-family:var(--serif);font-weight:800;font-size:1.1rem}
+.topics dd{font-size:.95rem}
+
+/* memo (blog preview) */
+.memo-band{background:var(--cream);color:var(--ink)}
+.memo-band h2{color:var(--crimson)}
+.memo-band a{color:var(--crimson)}
+.memo-band a:focus-visible{outline-color:var(--olive)}
+.memo{padding:18px 0;border-top:1px solid var(--olive)}
+.memo time{display:block;font-family:var(--serif);font-weight:800;font-size:1.05rem;color:var(--crimson)}
+.memo p{max-width:36em}
+
+/* gallery preview */
+.frames{display:flex;gap:28px;align-items:flex-end;flex-wrap:wrap}
+.frame{flex:1 1 200px;text-decoration:none;color:var(--cream)}
+.frame .canvas{display:block;border:10px solid var(--cream);background:var(--crimson-deep);aspect-ratio:4/5;position:relative;overflow:hidden}
+.frame:nth-child(2) .canvas{aspect-ratio:1/1}
+.frame:nth-child(3) .canvas{aspect-ratio:3/4}
+.frame .canvas::after{content:"";position:absolute;inset:0;background:var(--c);opacity:.9;clip-path:polygon(0 62%,35% 48%,70% 58%,100% 40%,100% 100%,0 100%)}
+.frame span.cap{display:block;margin-top:10px;font-size:.92rem}
+.frame:hover .canvas{border-color:var(--olive)}
+
+footer{background:var(--crimson-deep);color:var(--cream);padding:36px 0}
+footer ul{list-style:none;display:flex;gap:24px;flex-wrap:wrap;margin-bottom:12px}
+footer small{font-size:.85rem}
+
+@media (max-width:640px){
+  .topics{grid-template-columns:1fr}
+  .smear{right:-140px;opacity:.55}
+  .hero{padding:48px 0 64px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html">油絵ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html" aria-current="page">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="gallery.html">ギャラリー</a></li>
+        <li><a href="about.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <svg class="smear" viewBox="0 0 560 320" aria-hidden="true">
+      <defs>
+        <filter id="rough" x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.035 0.12" numOctaves="3" seed="7"/>
+          <feDisplacementMap in="SourceGraphic" scale="22"/>
+        </filter>
+      </defs>
+      <g filter="url(#rough)">
+        <path d="M20 90 C150 40 330 60 540 100 L520 170 C340 130 160 150 30 170 Z" fill="#f6edd6"/>
+        <path d="M60 190 C200 160 360 175 520 200 L500 260 C350 235 190 245 70 270 Z" fill="#808000"/>
+      </g>
+    </svg>
+    <div class="wrap">
+      <h1>油絵ノート</h1>
+      <p>油絵をゼロから学んでいく記録のサイトです。画材のこと、色の作り方、描いてみて気づいたことを、少しずつ積み重ねていきます。</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>学んでいること</h2>
+      <dl class="topics">
+        <div><dt>画材と道具</dt><dd>絵具、筆、溶き油、パレットナイフの選び方と使い方。</dd></div>
+        <div><dt>下地と下描き</dt><dd>キャンバスの準備と、グリザイユ（単色の下塗り）の練習。</dd></div>
+        <div><dt>混色と色相環</dt><dd>少ない色数で、狙った色を作れるようになる。</dd></div>
+        <div><dt>筆致とマチエール</dt><dd>厚塗りと薄塗り、絵肌の違いを試す。</dd></div>
+        <div><dt>乾燥と保存</dt><dd>乾く順番、ワニスの時期、作品の保管のしかた。</dd></div>
+        <div><dt>模写と観察</dt><dd>好きな画家の作品を見て、描き方を読み取る。</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="memo-band">
+    <div class="wrap">
+      <h2>最近の記録</h2>
+      <div class="memo">
+        <time datetime="2026-10-09">2026.10.09</time>
+        <p>ここに最新の勉強日記が入ります。ブログ（blog.html）の新しい投稿を3件ほど表示する場所です。</p>
+      </div>
+      <div class="memo">
+        <time datetime="2026-10-08">2026.10.08</time>
+        <p>日付と短い日記だけの、ひとことスタイルで書いていきます。</p>
+      </div>
+      <div class="memo">
+        <time datetime="2026-10-07">2026.10.07</time>
+        <p>サンプルの文章です。自分の記録に差し替えてください。</p>
+      </div>
+      <a class="more" href="blog.html">記録をすべて読む</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>ギャラリー</h2>
+      <p style="margin-bottom:28px">油絵にまつわる漫画、イラスト、4コマ、ちょっとしたコラムを置いています。</p>
+      <div class="frames">
+        <a class="frame" href="gallery.html"><span class="canvas" style="--c:#808000"></span><span class="cap">イラスト（サンプル）</span></a>
+        <a class="frame" href="gallery.html"><span class="canvas" style="--c:#f6edd6"></span><span class="cap">4コマ（サンプル）</span></a>
+        <a class="frame" href="gallery.html"><span class="canvas" style="--c:#808000"></span><span class="cap">漫画（サンプル）</span></a>
+      </div>
+      <a class="more" href="gallery.html">ギャラリーを見る</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="blog.html">ブログ</a></li>
+      <li><a href="gallery.html">ギャラリー</a></li>
+      <li><a href="about.html">このサイトについて</a></li>
+    </ul>
+    <small>&copy; 2026 油絵ノート</small>
+  </div>
+</footer>
+
+</body>
+</html>
