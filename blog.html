@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>勉強ブログ｜油絵ノート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;800&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --crimson:#8b0000;
+  --crimson-deep:#5e0000;
+  --olive:#808000;
+  --cream:#f6edd6;
+  --ink:#2e1b15;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--crimson);color:var(--cream);font-family:var(--sans);font-size:16px;line-height:1.9}
+a{color:var(--cream)}
+a:focus-visible{outline:3px solid var(--cream);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{padding:20px 0;border-bottom:2px solid var(--olive)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.logo{font-family:var(--serif);font-weight:800;font-size:1.3rem;color:var(--cream);text-decoration:none}
+nav ul{list-style:none;display:flex;gap:22px;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:500;padding-bottom:2px;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current]{border-bottom-color:var(--cream)}
+
+/* sections */
+section{padding:56px 0}
+h2{font-family:var(--serif);font-weight:800;font-size:1.7rem;color:var(--cream);margin-bottom:24px;display:inline-block;padding-bottom:6px;background:linear-gradient(var(--olive),var(--olive)) left bottom/100% 5px no-repeat}
+.more{display:inline-block;margin-top:20px;font-weight:500}
+
+
+/* page title */
+.page-title{padding:56px 0 8px}
+.page-title h1{font-family:var(--serif);font-weight:800;font-size:clamp(2.2rem,7vw,3.6rem);line-height:1.2;letter-spacing:.04em}
+.page-title p{margin-top:12px}
+.page-title .swatch{display:block;width:120px;height:10px;margin-top:20px;background:var(--olive);transform:skew(-20deg)}
+
+/* feed */
+.feed{max-width:640px;padding-bottom:24px}
+.post{padding:24px 0;border-top:1px solid rgba(246,237,214,.5)}
+.post:last-child{border-bottom:1px solid rgba(246,237,214,.5)}
+.post time{display:block;font-family:var(--serif);font-weight:800;font-size:1.05rem;color:var(--cream);margin-bottom:6px}
+.post p{font-size:1.02rem}
+.post p + p{margin-top:.8em}
+
+footer{background:var(--crimson-deep);color:var(--cream);padding:36px 0}
+footer ul{list-style:none;display:flex;gap:24px;flex-wrap:wrap;margin-bottom:12px}
+footer small{font-size:.85rem}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html">油絵ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html" aria-current="page">ブログ</a></li>
+        <li><a href="gallery.html">ギャラリー</a></li>
+        <li><a href="about.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-title">
+    <div class="wrap">
+      <h1>勉強ブログ</h1>
+      <p>油絵の勉強の進み具合を、日付とひとことで残していきます。</p>
+      <span class="swatch" aria-hidden="true"></span>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="feed">
+      <article class="post">
+        <time datetime="2026-10-09">2026.10.09</time>
+        <p>勉強の記録をここに書いていきます。日付と、その日にやったことだけの短い日記です。</p>
+      </article>
+      <article class="post">
+        <time datetime="2026-10-08">2026.10.08</time>
+        <p>画材を調べた。まずは少ない色数で始めて、混ぜながら覚えていく予定。</p>
+      </article>
+      <article class="post">
+        <time datetime="2026-10-07">2026.10.07</time>
+        <p>美術館で気になった絵の筆の跡を、じっくり観察した。厚く盛った部分と薄く伸ばした部分で、印象がまったく違う。</p>
+      </article>
+      <article class="post">
+        <time datetime="2026-10-05">2026.10.05</time>
+        <p>色相環を描いて、赤とオリーブ色を混ぜてみた。思ったより茶色っぽく落ち着く。</p>
+      </article>
+      <article class="post">
+        <time datetime="2026-10-03">2026.10.03</time>
+        <p>グリザイユ（単色の下塗り）の練習。明るさだけで形を作るのは難しいけれど、あとの色が乗せやすくなりそう。</p>
+      </article>
+      <article class="post">
+        <time datetime="2026-10-01">2026.10.01</time>
+        <p>油絵の勉強を始めた日。まずはキャンバスに触って、道具の名前を覚えるところから。</p>
+      </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="blog.html">ブログ</a></li>
+      <li><a href="gallery.html">ギャラリー</a></li>
+      <li><a href="about.html">このサイトについて</a></li>
+    </ul>
+    <small>&copy; 2026 油絵ノート</small>
+  </div>
+</footer>
+
+</body>
+</html>
