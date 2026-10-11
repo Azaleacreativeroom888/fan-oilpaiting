@@ -50,6 +50,15 @@ h2{font-family:var(--serif);font-weight:800;font-size:1.7rem;color:var(--cream);
 .page-title p{margin-top:12px}
 .page-title .swatch{display:block;width:120px;height:10px;margin-top:20px;background:var(--olive);transform:skew(-20deg)}
 
+/* feature link box */
+.feature{display:flex;align-items:center;gap:20px;text-decoration:none;color:var(--cream);background:var(--crimson-deep);border:3px solid var(--cream);border-left:12px solid var(--olive);padding:22px 26px;max-width:720px}
+.feature:hover{border-color:var(--olive);border-left-color:var(--olive)}
+.feature:focus-visible{outline:3px solid var(--cream);outline-offset:3px}
+.feature .tag{display:inline-block;background:var(--olive);color:var(--cream);font-size:.8rem;font-weight:500;letter-spacing:.15em;padding:0 10px;margin-bottom:6px}
+.feature .ttl{display:block;font-family:var(--serif);font-weight:800;font-size:1.6rem;line-height:1.4}
+.feature .dsc{display:block;font-size:.95rem}
+.feature .arrow{margin-left:auto;font-size:2rem;flex-shrink:0}
+
 /* works */
 .canvas{display:block;border:10px solid var(--cream);background:var(--crimson-deep);position:relative;overflow:hidden}
 .canvas::after{content:"";position:absolute;inset:0;background:var(--c,var(--olive));opacity:.9;clip-path:polygon(0 62%,35% 48%,70% 58%,100% 40%,100% 100%,0 100%)}
@@ -101,6 +110,19 @@ footer small{font-size:.85rem}
       <span class="swatch" aria-hidden="true"></span>
     </div>
   </div>
+
+  <section style="padding-bottom:0">
+    <div class="wrap">
+      <a class="feature" href="report1.html">
+        <span>
+          <span class="tag">特集</span>
+          <span class="ttl">油絵の描き方</span>
+          <span class="dsc">画材の準備から仕上げまで、手順を追って紹介します。</span>
+        </span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+    </div>
+  </section>
 
   <section>
     <div class="wrap">
