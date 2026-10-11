@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>油絵の描き方｜油絵ノート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;800&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --crimson:#8b0000;
+  --crimson-deep:#5e0000;
+  --olive:#808000;
+  --cream:#f6edd6;
+  --ink:#2e1b15;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--crimson);color:var(--cream);font-family:var(--sans);font-size:16px;line-height:1.9}
+a{color:var(--cream)}
+a:focus-visible{outline:3px solid var(--cream);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{padding:20px 0;border-bottom:2px solid var(--olive)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.logo{font-family:var(--serif);font-weight:800;font-size:1.3rem;color:var(--cream);text-decoration:none}
+nav ul{list-style:none;display:flex;gap:22px;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:500;padding-bottom:2px;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current]{border-bottom-color:var(--cream)}
+
+/* sections */
+section{padding:56px 0}
+h2{font-family:var(--serif);font-weight:800;font-size:1.7rem;color:var(--cream);margin-bottom:24px;display:inline-block;padding-bottom:6px;background:linear-gradient(var(--olive),var(--olive)) left bottom/100% 5px no-repeat}
+.more{display:inline-block;margin-top:20px;font-weight:500}
+
+/* topics */
+.topics{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.topics div{padding:14px 0;border-top:1px solid rgba(246,237,214,.5)}
+.topics dt{font-family:var(--serif);font-weight:800;font-size:1.1rem}
+.topics dd{font-size:.95rem}
+
+/* memo (blog preview) */
+.memo-band{background:var(--cream);color:var(--ink)}
+.memo-band h2{color:var(--crimson)}
+.memo-band a{color:var(--crimson)}
+.memo-band a:focus-visible{outline-color:var(--olive)}
+
+
+/* page title */
+.page-title{padding:56px 0 8px}
+.page-title h1{font-family:var(--serif);font-weight:800;font-size:clamp(2.2rem,7vw,3.6rem);line-height:1.2;letter-spacing:.04em}
+.page-title p{margin-top:12px;max-width:34em}
+.page-title .swatch{display:block;width:120px;height:10px;margin-top:20px;background:var(--olive);transform:skew(-20deg)}
+.lead{max-width:36em;margin-bottom:28px}
+
+/* steps */
+.steps{list-style:none;counter-reset:step;max-width:42em}
+.steps li{counter-increment:step;display:grid;grid-template-columns:64px 1fr;gap:0 8px;padding:20px 0;border-top:1px solid var(--olive)}
+.steps li:last-child{border-bottom:1px solid var(--olive)}
+.steps li::before{content:counter(step);grid-row:1 / span 2;font-family:var(--serif);font-weight:800;font-size:2.6rem;line-height:1;color:var(--crimson)}
+.steps h3{font-family:var(--serif);font-weight:800;font-size:1.2rem;color:var(--crimson)}
+.note{margin-top:28px;max-width:42em;padding:14px 18px;border-left:6px solid var(--olive);background:rgba(128,128,0,.14)}
+.back{margin-top:8px}
+@media (max-width:640px){.steps li{grid-template-columns:48px 1fr}.steps li::before{font-size:2rem}}
+
+footer{background:var(--crimson-deep);color:var(--cream);padding:36px 0}
+footer ul{list-style:none;display:flex;gap:24px;flex-wrap:wrap;margin-bottom:12px}
+footer small{font-size:.85rem}
+
+@media (max-width:640px){
+  .topics{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html">油絵ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="gallery.html" aria-current="page">ギャラリー</a></li>
+        <li><a href="about.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-title">
+    <div class="wrap">
+      <h1>油絵の描き方</h1>
+      <p>はじめに必要な画材の種類と、絵ができあがるまでの基本の手順をまとめました。</p>
+      <span class="swatch" aria-hidden="true"></span>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>画材の種類</h2>
+      <p class="lead">まず揃えたいものを、用途ごとに紹介します。全部を一度に買わなくても、絵具・筆・溶き油・キャンバスがあれば描き始められます。</p>
+      <dl class="topics">
+        <div><dt>油絵具</dt><dd>チューブ入りが基本。最初は白・黄・赤・青の基本色に黒を足した数色から始めて、混ぜながら色の作り方を覚える。</dd></div>
+        <div><dt>筆</dt><dd>油絵向きは、コシのある豚毛やナイロンなどの合成毛。平筆・丸筆・フィルバート（先が楕円の平筆）を大小で揃えると使い回しやすい。</dd></div>
+        <div><dt>溶き油・メディウム</dt><dd>絵具をのばす油。乾きが遅い亜麻仁油（リンシードオイル）や、速乾タイプのペインティングオイルなどがある。</dd></div>
+        <div><dt>筆洗い油</dt><dd>筆の絵具を落とす油。テレピンやペトロールなどの揮発性の油を使う。臭いが少ない無臭タイプもある。</dd></div>
+        <div><dt>パレット・ナイフ</dt><dd>パレットは絵具を混ぜる板。ペインティングナイフ（絵具をのせたり削ったりする道具）があると、厚塗りや混色が楽になる。</dd></div>
+        <div><dt>支持体</dt><dd>絵を描く土台。張りキャンバスが定番で、キャンバスボードや油彩用の紙、木の板も使える。</dd></div>
+        <div><dt>下地材</dt><dd>ジェッソなど、キャンバスの下地を作る塗料。絵具の吸い込みを止めて、発色と定着をよくする。下地が塗ってある市販品も多い。</dd></div>
+        <div><dt>イーゼル・ワニス</dt><dd>イーゼルは絵を立てかける台。ワニスは完成した絵の表面を守る仕上げ用の液で、最後に使う。</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="memo-band">
+    <div class="wrap">
+      <h2>描く手順</h2>
+      <ol class="steps">
+      <li><h3>下地を整える</h3><p>ジェッソを塗って乾かし、キャンバスの表面を整える。下地が塗ってあるキャンバスなら、この工程は省ける。</p></li>
+      <li><h3>下描きをする</h3><p>薄く溶いた絵具を、細い筆でのせて構図を決める。形をざっくり取るだけで、細かく描き込まない。</p></li>
+      <li><h3>下塗りで明暗をつける</h3><p>茶色など単色で、明るい所と暗い所を薄く塗り分ける（グリザイユ）。形と明暗が先に決まるので、あとの色がのせやすい。</p></li>
+      <li><h3>色を重ねる</h3><p>大きな面から色をのせ、少しずつ細かい部分へ進む。下の層が乾ききらないうちに、油分の多い絵具を重ねていくのが決まり。</p></li>
+      <li><h3>仕上げの描き込み</h3><p>細部を描き込み、いちばん明るい所に厚く絵具をのせる。最後は、油分を一番多くした絵具を使う。</p></li>
+      <li><h3>しっかり乾かす</h3><p>表面が乾くまでは数日から数週間。中まで乾くには半年から1年ほどかかる。風通しのよい、ほこりの少ない場所で保管する。</p></li>
+      <li><h3>ワニスを塗る</h3><p>完全に乾いてから、仕上げにワニスを薄く塗る。つやをそろえて、絵の表面を汚れや傷から守る。</p></li>
+      </ol>
+      <p class="note">油のついた布やペーパーは、まとめて置くと自然に発火することがあります。使ったあとは水に浸すか、広げて乾かしてから捨ててください。</p>
+      <p class="back"><a class="more" href="gallery.html">← ギャラリーに戻る</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="blog.html">ブログ</a></li>
+      <li><a href="gallery.html">ギャラリー</a></li>
+      <li><a href="about.html">このサイトについて</a></li>
+    </ul>
+    <small>&copy; 2026 油絵ノート</small>
+  </div>
+</footer>
+
+</body>
+</html>
