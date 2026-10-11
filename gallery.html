@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ギャラリー｜油絵ノート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;800&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --crimson:#8b0000;
+  --crimson-deep:#5e0000;
+  --olive:#808000;
+  --cream:#f6edd6;
+  --ink:#2e1b15;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--crimson);color:var(--cream);font-family:var(--sans);font-size:16px;line-height:1.9}
+a{color:var(--cream)}
+a:focus-visible{outline:3px solid var(--cream);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{padding:20px 0;border-bottom:2px solid var(--olive)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.logo{font-family:var(--serif);font-weight:800;font-size:1.3rem;color:var(--cream);text-decoration:none}
+nav ul{list-style:none;display:flex;gap:22px;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:500;padding-bottom:2px;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current]{border-bottom-color:var(--cream)}
+
+/* sections */
+section{padding:56px 0}
+h2{font-family:var(--serif);font-weight:800;font-size:1.7rem;color:var(--cream);margin-bottom:24px;display:inline-block;padding-bottom:6px;background:linear-gradient(var(--olive),var(--olive)) left bottom/100% 5px no-repeat}
+.more{display:inline-block;margin-top:20px;font-weight:500}
+
+/* memo (blog preview) */
+.memo-band{background:var(--cream);color:var(--ink)}
+.memo-band h2{color:var(--crimson)}
+.memo-band a{color:var(--crimson)}
+.memo-band a:focus-visible{outline-color:var(--olive)}
+
+
+/* page title */
+.page-title{padding:56px 0 8px}
+.page-title h1{font-family:var(--serif);font-weight:800;font-size:clamp(2.2rem,7vw,3.6rem);line-height:1.2;letter-spacing:.04em}
+.page-title p{margin-top:12px}
+.page-title .swatch{display:block;width:120px;height:10px;margin-top:20px;background:var(--olive);transform:skew(-20deg)}
+
+/* works */
+.canvas{display:block;border:10px solid var(--cream);background:var(--crimson-deep);position:relative;overflow:hidden}
+.canvas::after{content:"";position:absolute;inset:0;background:var(--c,var(--olive));opacity:.9;clip-path:polygon(0 62%,35% 48%,70% 58%,100% 40%,100% 100%,0 100%)}
+figure{margin:0}
+figcaption{margin-top:10px;font-size:.92rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;align-items:end}
+.manga{display:grid;grid-template-columns:1fr 1fr;max-width:560px}
+.manga .canvas{aspect-ratio:5/7}
+.manga .canvas + .canvas{border-left-width:3px}
+.manga .canvas:first-child{border-right-width:3px}
+.strips{display:flex;gap:32px;flex-wrap:wrap}
+.strip{width:210px;display:flex;flex-direction:column;gap:10px}
+.panel{border:6px solid var(--cream);background:var(--crimson-deep);aspect-ratio:4/3;position:relative}
+.panel b{position:absolute;left:8px;top:2px;font-family:var(--serif);font-size:1.3rem;color:var(--cream)}
+
+/* columns */
+.column{padding:22px 0;border-top:1px solid var(--olive);max-width:38em}
+.column h3{font-family:var(--serif);font-weight:800;font-size:1.25rem;color:var(--crimson)}
+.column time{display:block;font-size:.88rem;margin-bottom:6px}
+
+footer{background:var(--crimson-deep);color:var(--cream);padding:36px 0}
+footer ul{list-style:none;display:flex;gap:24px;flex-wrap:wrap;margin-bottom:12px}
+footer small{font-size:.85rem}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html">油絵ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="gallery.html" aria-current="page">ギャラリー</a></li>
+        <li><a href="about.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-title">
+    <div class="wrap">
+      <h1>ギャラリー</h1>
+      <p>油絵にまつわるイラスト、漫画、4コマと、ちょっとしたコラムを置いています。</p>
+      <span class="swatch" aria-hidden="true"></span>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>イラスト</h2>
+      <div class="grid">
+        <figure><span class="canvas" style="aspect-ratio:4/5;--c:#808000"></span><figcaption>タイトル（サンプル）</figcaption></figure>
+        <figure><span class="canvas" style="aspect-ratio:1/1;--c:#f6edd6"></span><figcaption>タイトル（サンプル）</figcaption></figure>
+        <figure><span class="canvas" style="aspect-ratio:3/4;--c:#808000"></span><figcaption>タイトル（サンプル）</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>漫画</h2>
+      <figure>
+        <div class="manga"><span class="canvas" style="--c:#f6edd6"></span><span class="canvas" style="--c:#808000"></span></div>
+        <figcaption>読み切りのタイトル（サンプル）</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>4コマ</h2>
+      <div class="strips">
+        <figure class="strip"><div class="panel"><b>1</b></div><div class="panel"><b>2</b></div><div class="panel"><b>3</b></div><div class="panel"><b>4</b></div><figcaption>第1話（サンプル）</figcaption></figure>
+        <figure class="strip"><div class="panel"><b>1</b></div><div class="panel"><b>2</b></div><div class="panel"><b>3</b></div><div class="panel"><b>4</b></div><figcaption>第2話（サンプル）</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="memo-band">
+    <div class="wrap">
+      <h2>コラム</h2>
+      <article class="column">
+        <h3>コラムのタイトル（サンプル）</h3>
+        <time datetime="2026-10-09">2026.10.09</time>
+        <p>油絵について思ったことを、短く気軽に書く場所です。画材の話、好きな画家の話、描いていて気づいたことなど、自由に入れてください。</p>
+      </article>
+      <article class="column">
+        <h3>もうひとつのコラム（サンプル）</h3>
+        <time datetime="2026-10-05">2026.10.05</time>
+        <p>こちらもサンプルの文章です。自分の言葉に差し替えてね。</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="blog.html">ブログ</a></li>
+      <li><a href="gallery.html">ギャラリー</a></li>
+      <li><a href="about.html">このサイトについて</a></li>
+    </ul>
+    <small>&copy; 2026 油絵ノート</small>
+  </div>
+</footer>
+
+</body>
+</html>
